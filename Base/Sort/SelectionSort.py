@@ -5,7 +5,7 @@ numbers=[]
 for _ in range(N):
     numbers.append(int(input()))
 
-# Insertion Sort
+# Selection Sort
 
 for i in range(len(numbers)-1): # n-1개 만 정렬하면, 나머지 1개는 자동 정렬
     maxIdx=i

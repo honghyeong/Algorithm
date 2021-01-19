@@ -7,6 +7,6 @@ class Solution:
             else:
                 letters.append(log)
 
-        # 2개의 키를 람다 표현식으로 정렬
+        # sort by using lambda expression with 2 keys
         letters.sort(key=lambda x:(x.split()[1:],x.split()[0]))
         return letters+digits

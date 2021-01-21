@@ -18,4 +18,14 @@ class Solution:
                 # find index which has complement var after index i
                 return nums.index(v), nums[i+1:].index(complement)+(i+1)
                 
-#              
+# Using Dictionary, to find at once.            
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        nums_map={}
+        # save to dictionary , value->key, index->value
+        for i,num in enumerate(nums):
+            nums_map[num]=i
+        # Search by key , complement value
+        for i,num in enumerate(nums):
+            if target-num in nums_map and i!=nums_map[target-num]:
+                return i,nums_map[target-num]

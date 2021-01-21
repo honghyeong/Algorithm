@@ -29,3 +29,14 @@ class Solution:
         for i,num in enumerate(nums):
             if target-num in nums_map and i!=nums_map[target-num]:
                 return i,nums_map[target-num]
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        nums_map={}
+        # save to dictionary , value->key, index->value
+        for i, num in enumerate(nums):
+            if target-num in nums_map:
+                return [nums_map[target-num],i]
+            nums_map[num]=i
+
+            

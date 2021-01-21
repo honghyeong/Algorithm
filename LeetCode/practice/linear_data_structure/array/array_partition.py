@@ -23,3 +23,8 @@ class Solution:
             if i%2==0: # function min always return even index value
                 sum+=v
         return sum
+
+# Pythonic way
+class Solution:
+    def arrayPairSum(self, nums: List[int]) -> int:
+        return sum(sorted(nums)[::2])

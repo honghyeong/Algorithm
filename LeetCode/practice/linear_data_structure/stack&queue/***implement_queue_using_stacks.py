@@ -1,3 +1,5 @@
+#232
+class MyQueue:
 
     def __init__(self):
         self.input=[]

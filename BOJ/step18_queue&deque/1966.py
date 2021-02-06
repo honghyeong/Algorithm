@@ -21,6 +21,6 @@ for _ in range(N):
     N,M=map(int,input().split())
     arr=list(map(int,input().split()))
 
-    arr[M]=float(arr[M])
+    arr[M]=float(arr[M]) # hang a mark ( type float)
 
     print(print_queue(arr))

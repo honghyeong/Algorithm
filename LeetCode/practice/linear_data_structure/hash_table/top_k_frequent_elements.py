@@ -1,5 +1,7 @@
 #347
 
+# Use Counter, MaxHeap
+
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         freqs=collections.Counter(nums)
@@ -16,3 +18,12 @@ class Solution:
             topk.append(heapq.heappop(freqs_heap)[1])
             
         return topk
+
+# Pythonic way  
+import collections
+from typing import *
+import heapq
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        return list(zip(*collections.Counter(nums).most_common(k)))[0]

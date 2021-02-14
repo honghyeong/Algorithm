@@ -8,11 +8,9 @@ class Solution:
                 result.append(path)
                 return
             
-            # 입력값 자릿수 단위 반복
-            for i in range(index,len(digits)): ##***
-                # 숫자에 해당하는 모든 문자열 반복
-                for j in dic[digits[i]]:
-                    dfs(i+1,path+j)
+            # digits의 자릿수에 따라 그에 상응하는 문자들 차례대로 이어붙임.
+            for j in dic[digits[index]]:
+                dfs(i+1,path+j)
                         
         # 예외 처리
         if not digits:

@@ -1,5 +1,5 @@
 # 46
-
+# DFS, Backtracking
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         results=[]
@@ -21,3 +21,10 @@ class Solution:
                 
         dfs(nums)
         return results
+
+    
+# Itertools
+import itertools
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        return list(map(list,itertools.permutations(nums)))

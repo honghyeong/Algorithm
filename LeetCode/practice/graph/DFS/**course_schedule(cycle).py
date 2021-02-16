@@ -62,7 +62,7 @@ class Solution:
             visited.add(i)
             return True
 
-        for x in list(graph):
+        for x in list(graph):  ####### python 공식 인터프리터인  C Python의 원리와 특징
             if not dfs(x):
                 return False
 

@@ -53,7 +53,7 @@ class Solution:
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
         graph=collections.defaultdict(list)
         # 그래프 사전어휘순으로 형성
-        for a,b in sorted(tickets,reverse=True):
+        for a,b in sorted(tickets):
             graph[a].append(b)
 
         route=[]

@@ -23,6 +23,6 @@ class Solution:
             if k>=0: # K=0일때, 한번 이동하는 것으로 치는 문제이기 때문
                 for v,w in graph[node]:
                     alt=price+w
-                    heapq.heappush((alt,v,k-1))
+                    heapq.heappush(Q,(alt,v,k-1))
                     
         return -1

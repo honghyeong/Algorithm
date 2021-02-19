@@ -20,7 +20,7 @@ class Solution:
             price,node,k=heapq.heappop(Q)
             if node==dst:
                 return price
-            if k>=0:
+            if k>=0: # K=0일때, 한번 이동하는 것으로 치는 문제이기 때문
                 for v,w in graph[node]:
                     alt=price+w
                     heapq.heappush((alt,v,k-1))

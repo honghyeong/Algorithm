@@ -14,6 +14,7 @@ for _ in range(E):
 
 V1,V2=map(int,input().split())
 
+# 도달할 수 없는 경로는 무한대의 거리로 설정해주는 dijkstra 
 def dijkstra(start):
    dist=[INF for _ in range(N+1)]
    dist[start]=0
@@ -31,7 +32,9 @@ def dijkstra(start):
 one=dijkstra(1)
 V1_start=dijkstra(V1)
 V2_start=dijkstra(V2)
-
+# 0-> v1 -> v2 -> N 또는 0 -> v2 -> v1 -> N으로 가는 경로 비교
+# 만약 도달 할 수 없는 거리로 return 된다면, INF값이 result에 저장
+# 따라서, -1 제출
 result=min(one[V1]+V1_start[V2]+V2_start[N], one[V2]+V2_start[V1]+V1_start[N])
 
 print(result if result<INF else -1)

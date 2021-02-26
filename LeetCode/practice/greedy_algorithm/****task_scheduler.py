@@ -1,4 +1,7 @@
 # 621
+# 많은 빈도의 task를 먼저 사용하는 greedy choice
+
+
 class Solution:
     def leastInterval(self, tasks: List[str], n: int) -> int:
         counter=collections.Counter(tasks)

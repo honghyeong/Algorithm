@@ -1,5 +1,6 @@
 from typing import *
 
+# prev_elements의 append, pop을 이용한 backtracking
 
 def dfs(elements:List[int],M:int): # 재귀 backtracking을 구현할 dfs
 
@@ -33,3 +34,27 @@ for i in result: #
     print('')
 
 
+# path=[] 를 parameter로 활용했을 때 dfs
+from typing import *
+N,M=map(int,input().split())
+
+result=[]
+
+elements=[ x for x in range(1,N+1)]
+
+prev_result=[]
+
+def dfs(a_elements,path:List=[]):
+    if len(path)==M:
+        result.append(path)
+        return
+
+    for i in a_elements:
+
+        next_elements=a_elements.copy()
+        next_elements.remove(i)
+        dfs(next_elements,path+[i])
+
+
+dfs(elements,[])
+print(result)

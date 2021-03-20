@@ -71,7 +71,7 @@ int main() {
 
 
 	int n, k;
-	queue<int> q[21];
+	queue<int> q[21];  ## 입력되는 이름의 길이에 주목해서 각 이름의 길이별로 큐를 만들고, k가 넘는 순위 차이의 친구는 제거. 남은 친구들은 좋은 친구가 될 수 있다.
 	cin >> n>> k;
 	long long cnt = 0;
 

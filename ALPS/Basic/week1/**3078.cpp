@@ -1,4 +1,4 @@
-
+## Time complexity : O((n-k)k)
 #include<iostream>
 #include<queue>
 #include<string>
@@ -50,6 +50,48 @@ int main() {
 	}
 
 	cout << result;
+
+	return 0;
+}
+
+## Time complexity : O(n)?
+
+
+#include<iostream>
+#include<queue>
+#include<string>
+
+using namespace std;
+
+int main() {
+
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+
+
+	int n, k;
+	queue<int> q[21];
+	cin >> n>> k;
+	long long cnt = 0;
+
+	int result=0;
+
+	for (int i = 1; i <= n; i++) {
+		string str;
+		cin >> str;
+
+		int length = str.length();
+		
+		while (!q[length].empty() && i - q[length].front() > k) {
+			q[length].pop();
+		}
+		
+		cnt += q[length].size();
+		q[length].push(i);
+
+	}
+	cout << cnt;
 
 	return 0;
 }

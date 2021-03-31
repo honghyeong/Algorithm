@@ -1,13 +1,9 @@
 #include<iostream>
 #include<algorithm>
 #include<vector>
-
+#include<set>
 #include<deque>
-
-
 using namespace std;
-vector<int> v[100000];
-
 
 int main() {
 
@@ -31,6 +27,7 @@ int main() {
 	sort(v.begin(), v.end());
 	
 	
+
 	if (v.size() == 1) {
 		result = v[0];
 	}
@@ -40,11 +37,11 @@ int main() {
 	int rightwindowright = v.size() - 1;
 	int i = 1;
 
-	while (v.size()>1) { // stop 조건
+	while (leftwindowleft<=rightwindowright && rightwindowright-1>=0 && leftwindowleft+1<=v.size()-1) { // stop 조건
 
-		if (v[0]<0 && v[1]<= 0 ) {  // move left window
-			result += v[0] * v[1];
-			
+		if (v[leftwindowleft]<0 && v[leftwindowleft + 1]<= 0 ) {  // move left window
+			result += v[leftwindowleft] * v[leftwindowleft + 1];
+			leftwindowleft += 2;
 		}
 		if (v[rightwindowright]>0 && v[rightwindowright - 1] > 0) {
 			result += (v[rightwindowright] * v[rightwindowright - 1]); // move right wiwndow

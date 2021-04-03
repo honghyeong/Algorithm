@@ -1,3 +1,5 @@
+// 시간복잡도 생각해서 그물을 기준으로 해야됨.
+
 #include<iostream>
 #include<algorithm>
 #include<string>
